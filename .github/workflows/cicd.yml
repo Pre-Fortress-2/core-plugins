@@ -2,7 +2,8 @@ name: CI/CD
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]   
+  workflow_dispatch:
 
 jobs:
   build:
@@ -34,5 +35,8 @@ jobs:
         with:
           name: plugins
           path: addons/sourcemod/plugins
-      - uses: EndBug/add-and-commit@v9 
-      - uses: softprops/action-gh-release@v2
+      - uses: EndBug/add-and-commit@v9
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: continuous
