@@ -35,8 +35,12 @@ jobs:
         with:
           name: plugins
           path: addons/sourcemod/plugins
-      - uses: EndBug/add-and-commit@v9
+      - id: commit
+        uses: EndBug/add-and-commit@v9
+      - name: Compress Files
+        run: zip -r core-plugins.zip .
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: continuous
+          files: core-plugins.zip
+          tag_name: ${{ steps.commit.outputs.commit_sha}}
