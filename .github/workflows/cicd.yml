@@ -16,10 +16,10 @@ jobs:
         run: wget -O sourcemod.tar.gz https://sm.alliedmods.net/smdrop/1.11/sourcemod-1.11.0-git6502-linux.tar.gz
       - name: Extract SourceMod
         run: tar -xzf sourcemod.tar.gz
-      - name: Compile Lilac
+      - name: Compile Plugins
         run: |
           ./addons/sourcemod/scripting/compile.sh lilac.sp
-      - name: 'Upload Artifact'
+      - name: Upload Compiled Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: plugins
@@ -32,7 +32,7 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Download Lilac
+      - name: Download Compiled Plugin Artifacts
         uses: actions/download-artifact@v4
         with:
           name: plugins
