@@ -39,9 +39,12 @@ jobs:
         uses: EndBug/add-and-commit@v9
       - name: Compress Files
         run: |
-          zip -r core-plugins.zip addons
+          rm -rf 
+          zip -r core-plugins.zip . -x 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: core-plugins.zip
+          generate_release_notes: true
           tag_name: ${{ steps.commit.outputs.commit_sha}}
+          make_latest: "true"
