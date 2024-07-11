@@ -33,10 +33,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: plugins
-      - name: Relocate Plugins
-        run: |
-          unzip plugins.zip 
-          mv *.smx addons/sourcemod/plugins
-          rm plugins.zip
+          path: addons/sourcemod/plugins
       - uses: EndBug/add-and-commit@v9 
       - uses: softprops/action-gh-release@v2
