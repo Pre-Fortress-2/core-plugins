@@ -136,10 +136,10 @@
 #define DATABASE_KICK -1
 #define DATABASE_LOG_ONLY -2
 
-#define PLUGIN_NAME      "[Lilac] Little Anti-Cheat"
-#define PLUGIN_AUTHOR    "J_Tanzanite"
+#define PLUGIN_NAME      "[Lilac] Little Anti-Cheat - PF2 Edition"
+#define PLUGIN_AUTHOR    "J_Tanzanite & PF2 Team"
 #define PLUGIN_DESC      "An opensource Anti-Cheat"
-#define PLUGIN_VERSION   "1.7.4"
+#define PLUGIN_VERSION   "1.7.4a"
 #define PLUGIN_URL       "https://github.com/J-Tanzanite/Little-Anti-Cheat"
 
 /* Convars. */
